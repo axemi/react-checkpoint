@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#email-list {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid red;
+}
+#email-list a {text-decoration: none; color: black}
+#email-list a:hover { text-decoration: none; color: black; }
+#email-list a:focus { text-decoration: none; color: black; }
+#email-list a:active { text-decoration: none; color: black; }
+
+#email-list-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+#email-list-row div{
+  margin: 10px
+}
+/*
+#email-list-row:nth-child(odd) {
+  background-color: lightgrey;
+}
+*/
+
+#compose-email {
+  padding: 15px;
+  margin: 10px;
+}

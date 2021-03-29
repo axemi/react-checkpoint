@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
+import EmailList from "./emailList"
+import Search from "./search"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+/*
+- view all messages X
+- view single email X
+- send email
+- search specific email by subject
+*/
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      status: "default"
+    }
+  }
+
+  handleStatus = (value) => {
+    this.setState({
+      status: value
+    })
+  } 
+  render() {
+    return (
+      <div className="app">
+        <header id="app-header">
+          <h1>MOCK GMAIL</h1>
+          <Search parentStatus={this.handleStatus} emails={this.state.emails}/>
+        </header>
+        <EmailList parentStatus={this.handleStatus}/>
+        <button id="compose-email">Compose</button>
+      </div>
+    );
+  }
 }
 
 export default App;
